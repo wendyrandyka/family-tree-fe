@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply font-body text-ink-800 antialiased;
+    background: #fdf8f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-parchment-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-parchment-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-parchment-500;
+  }
+}
+
+/* React Flow overrides */
+.react-flow__background {
+  background-color: #fdf8f0 !important;
+}
+
+.react-flow__edge-path {
+  stroke: #b0a080 !important;
+  stroke-width: 2px;
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.6s linear infinite;
+}
+
+@keyframes dashdraw {
+  to { stroke-dashoffset: -10; }
+}
+
+.react-flow__controls {
+  border: 1px solid #e8ddb8 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(20, 14, 10, 0.12) !important;
+}
+
+.react-flow__controls-button {
+  background: #fdf8f0 !important;
+  border-bottom: 1px solid #e8ddb8 !important;
+  color: #503830 !important;
+  transition: background 0.15s;
+}
+
+.react-flow__controls-button:hover {
+  background: #f9eedc !important;
+}
+
+.react-flow__minimap {
+  border: 1px solid #e8ddb8 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(20, 14, 10, 0.12) !important;
+}
+
+/* Form inputs */
+.form-input {
+  @apply w-full px-3 py-2 rounded-lg border border-parchment-300 bg-parchment-50 
+    text-ink-800 font-body text-sm placeholder-ink-400
+    focus:outline-none focus:ring-2 focus:ring-forest-400 focus:border-transparent
+    transition-all duration-200;
+}
+
+.form-input:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.form-label {
+  @apply block text-xs font-medium text-ink-600 mb-1 uppercase tracking-wider;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-body font-medium text-sm
+    bg-forest-600 text-white 
+    hover:bg-forest-700 active:bg-forest-800
+    transition-all duration-150 shadow-sm;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-body font-medium text-sm
+    bg-parchment-200 text-ink-700
+    hover:bg-parchment-300 active:bg-parchment-400
+    transition-all duration-150;
+}
+
+.btn-danger {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-body font-medium text-sm
+    bg-red-600 text-white
+    hover:bg-red-700 active:bg-red-800
+    transition-all duration-150 shadow-sm;
+}
+
+/* Node styles */
+.family-node {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.family-node:hover {
+  transform: translateY(-2px);
+}
