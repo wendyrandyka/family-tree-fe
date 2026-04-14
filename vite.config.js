@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
       host: true,
-	   allowedHosts: 'all', // ✅ TAMBAH INI
+	   allowedHosts: ['family-tree-fe-3pae.onrender.com'], // ✅ TAMBAH INI
       proxy: {
         '/persons': {
           target: BACKEND,
