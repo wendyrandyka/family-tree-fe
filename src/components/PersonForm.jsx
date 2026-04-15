@@ -33,7 +33,7 @@ export default function PersonForm({ person, persons, onSave, onDelete, onClose,
       });
       setPhotoPreview(
         person.photo_url
-          ? (person.photo_url.startsWith('http') ? person.photo_url : `${BACKEND}${person.photo_url}`)
+          ? person.photo_url  // Supabase URL selalu absolute (https://...)
           : null
       );
     } else {
