@@ -88,7 +88,7 @@ export default function PersonForm({ person, persons, onSave, onDelete, onClose,
       const fd = new FormData();
       fd.append('photo', file);
       const token = localStorage.getItem('ft_token');
-      const res = await axios.post('http://localhost:3001/persons/upload-photo', fd, {
+      const res = await axios.post( import.meta.env.VITE_BACKEND_URL+'/persons/upload-photo', fd, {
         headers: { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` },
       });
       setForm(prev => ({ ...prev, photo_url: res.data.url }));
