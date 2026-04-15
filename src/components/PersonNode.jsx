@@ -2,7 +2,9 @@ import React from 'react';
 import { Handle, Position } from '@xyflow/react';
 import { calcAge } from '../utils/treeLayout';
 
-const BACKEND = 'http://localhost:3001';
+//const BACKEND = 'http://localhost:3001';
+
+const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 export default function PersonNode({ data, selected }) {
   const { person, onSelect } = data;
