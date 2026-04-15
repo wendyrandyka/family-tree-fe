@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { X, Save, Trash2, UserPlus, User, Upload, Camera } from 'lucide-react';
 import axios from 'axios';
 
-const BACKEND = 'http://localhost:3001';
+//const BACKEND = 'http://localhost:3001';
+const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 const emptyForm = {
   name: '', gender: 'male', date_of_birth: '', date_of_death: '',
